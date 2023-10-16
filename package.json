@@ -1,0 +1,26 @@
+{
+  "name": "svg-logo-generator",
+  "version": "1.0.0",
+  "description": "A tool for generating SVG logos.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "keywords": ["SVG", "logo", "generator"],
+  "author": "Austin Tynes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/austintynes/svg-logo-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austintynes/svg-logo-generator/issues"
+  },
+  "homepage": "https://github.com/austintynes/svg-logo-generator"
+}
