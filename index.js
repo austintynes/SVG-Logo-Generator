@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const fs = require('fs')
+const { Circle, Square, Triangle } = require("./lib/shapes");
 
 inquirer
   .prompt([
@@ -17,7 +19,7 @@ inquirer
       },
     },
     {
-      type: "select",
+      type: "list",
       name: "textColor",
       message: "What color do you want the text to be?: ",
       choices: [
@@ -34,7 +36,7 @@ inquirer
       ],
     },
     {
-      type: "select",
+      type: "list",
       name: "shape",
       message: "What shape do you want?: ",
       choices: ["Circle", "Triangle", "Square"],
@@ -59,6 +61,16 @@ inquirer
   ])
   .then((answers) => {
     console.log("Logo Name: " + answers.logoName);
+    if (answers.shape === "Square") {
+      const shape = new Square (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
+      fs.writeFileSync("./dist/square.svg", shape.render())
+    } else if (answers.shape === "Triangle") {
+      const shape = new Triangle (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
+      fs.writeFileSync("./dist/triangle.svg", shape.render())
+    } else {
+      const shape = new Circle (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
+      fs.writeFileSync("./dist/circle.svg", shape.render())
+    }
   })
   .catch((error) => {
     console.error(error);

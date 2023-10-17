@@ -7,12 +7,18 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "jest": "^24.8.0"
   },
-  "keywords": ["SVG", "logo", "generator"],
+  "keywords": [
+    "SVG",
+    "logo",
+    "generator"
+  ],
   "author": "Austin Tynes",
   "license": "MIT",
   "repository": {
