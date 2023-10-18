@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const fs = require('fs')
+const fs = require("fs");
 const { Circle, Square, Triangle } = require("./lib/shapes");
 
 inquirer
@@ -61,23 +61,35 @@ inquirer
   ])
   .then((answers) => {
     console.log("Logo Name: " + answers.logoName);
+    console.log("Generated logo.svg")
     if (answers.shape === "Square") {
-      const shape = new Square (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
-      fs.writeFileSync("./dist/square.svg", shape.render())
+      const shape = new Square(
+        answers.logoName,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      fs.writeFileSync("./dist/square.svg", shape.render());
     } else if (answers.shape === "Triangle") {
-      const shape = new Triangle (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
-      fs.writeFileSync("./dist/triangle.svg", shape.render())
+      const shape = new Triangle(
+        answers.logoName,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      fs.writeFileSync("./dist/triangle.svg", shape.render());
     } else {
-      const shape = new Circle (answers.logoName, answers.textColor, answers.shape, answers.shapeColor)
-      fs.writeFileSync("./dist/circle.svg", shape.render())
+      const shape = new Circle(
+        answers.logoName,
+        answers.textColor,
+        answers.shape,
+        answers.shapeColor
+      );
+      fs.writeFileSync("./dist/circle.svg", shape.render());
     }
   })
   .catch((error) => {
     console.error(error);
   });
 
-// write file
 
-// output text is "Generated logo.svg" is printed in the command line
-
-//WHEN open the 'logo.svg' file in a browser THEN I am shown a 300x200 pixel image
